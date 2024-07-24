@@ -1,0 +1,13 @@
+{
+    "Admins":[
+
+        {
+        "userId": 0,
+        "emailId": "admin@gmail.com",
+        "fullName": "Admin",
+        "password": "1234"
+        }
+    ]
+        
+      
+}

@@ -1,0 +1,134 @@
+<form class="needs-validation" novalidate>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01">Name</label>
+        <input type="text" [(ngModel)]="userObj.name"  name="name" class="form-control" id="validationCustom01" placeholder="name" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom02">Username</label>
+        <input type="text" [(ngModel)]="userObj.username" name="username" class="form-control" id="validationCustom02" placeholder="Username" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustomUsername">Email</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+          </div>
+          <input type="text" [(ngModel)]="userObj.email" name="email" class="form-control" id="validationCustomUsername" placeholder="Email" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Please choose an email.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationCustom03">City</label>
+        <input type="text" [(ngModel)]="userObj.address.city"  name="city" class="form-control" id="validationCustom03" placeholder="City" required>
+        <div class="invalid-feedback">
+          Please provide a valid city.
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Suite</label>
+        <input type="text" [(ngModel)]="userObj.address.suite"  name="suite" class="form-control" id="validationCustom04" placeholder="Suite" required>
+        <div class="invalid-feedback">
+          Please provide a valid suite.
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Street</label>
+        <input type="text" [(ngModel)]="userObj.address.street"  name="street" class="form-control" id="validationCustom04" placeholder="Street" required>
+        <div class="invalid-feedback">
+          Please provide Street.
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom05">Zip</label>
+        <input type="text" [(ngModel)]="userObj.address.zipcode" name="zipcode" class="form-control" id="validationCustom05" placeholder="Zip" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Lat</label>
+        <input type="text" [(ngModel)]="userObj.address.geo.lat"  name="lat" class="form-control" id="validationCustom04" placeholder="Lat" required>
+        <div class="invalid-feedback">
+          Please provide a valid Lat.
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Lng</label>
+        <input type="text" [(ngModel)]="userObj.address.geo.lng" name="lng" class="form-control" id="validationCustom04" placeholder="Lng" required>
+        <div class="invalid-feedback">
+          Please provide a valid Lng.
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Phone no</label>
+        <input type="text" [(ngModel)]="userObj.phone"  name="phone" class="form-control" id="validationCustom04" placeholder="Phone no" required>
+        <div class="invalid-feedback">
+          Please provide a valid phone no.
+        </div>
+      </div>
+
+
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Website</label>
+        <input type="text"  [(ngModel)]="userObj.website" name="website" class="form-control" id="validationCustom04" placeholder="Website" required>
+        <div class="invalid-feedback">
+          Please provide a valid website.
+        </div>
+      </div>
+
+
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Company name</label>
+        <input type="text" [(ngModel)]="userObj.company.name" name="companyname" class ="form-control" id="validationCustom04" placeholder="Companyname" required>
+        <div class="invalid-feedback">
+          Please provide a name.
+        </div>
+      </div>
+
+
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">Catch Phrase</label>
+        <input type="text"  [(ngModel)]="userObj.company.catchPhrase" name="catchphrase" class="form-control" id="validationCustom04" placeholder="Catchphrase" required>
+        <div class="invalid-feedback">
+          Please provide valid arguments.
+        </div>
+      </div>
+
+
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">bs</label>
+        <input type="text" [(ngModel)]="userObj.company.bs" name="bs" class="form-control" id="validationCustom04" placeholder="bs" required>
+        <div class="invalid-feedback">
+          Please provide a valid bs.
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="postUser()" routerLink="/Userlist">Add New User</button>
+  </form>
+  
+  
