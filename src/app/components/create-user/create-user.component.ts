@@ -1,4 +1,4 @@
-import { Component, inject, Output, EventEmitter } from '@angular/core';
+import { Component, inject, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { APIService } from '../../service/api.service';
 import { Router, RouterLink } from '@angular/router';
@@ -8,9 +8,9 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [FormsModule, RouterLink],
   templateUrl: './create-user.component.html',
-  styleUrl: './create-user.component.css'
+  styleUrls: ['./create-user.component.css'] // Note: use 'styleUrls' instead of 'styleUrl'
 })
-export class CreateUserComponent {
+export class CreateUserComponent implements OnInit {
   userObj: any = {
     id: 0,
     name: "",
@@ -35,10 +35,29 @@ export class CreateUserComponent {
     }
   };
 
+  loggeduserId: number = 0;
   userservice = inject(APIService);
   router = inject(Router);
 
   @Output() userCreated = new EventEmitter<void>();
+
+  // ngOnInit(): void {
+  //   const logged_user = localStorage.getItem('userApp');
+  //   if (logged_user) {
+  //     const parse_data = JSON.parse(logged_user);
+  //     this.loggeduserId = parse_data.userid;
+  //     this.getuserbyID();
+  //   }
+  // }
+
+  ngOnInit(): void {
+      
+  }
+  getuserbyID() {
+    this.userservice.getuserbyID(this.loggeduserId).subscribe((data: any) => {
+      this.userObj = data;
+    });
+  }
 
   postUser() {
     this.userservice.createUser(this.userObj).subscribe((data: any) => {

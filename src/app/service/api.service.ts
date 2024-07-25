@@ -26,6 +26,10 @@ export class APIService {
 
   }
 
+  getuserbyID(userid:any){
+    return this.http.get("https://jsonplaceholder.typicode.com/users?id=" + userid)
+  }
+
   // edit_user(userid:any){
 
   //   return this.http.get("https://jsonplaceholder.typicode.com/users?id=" + userid)
